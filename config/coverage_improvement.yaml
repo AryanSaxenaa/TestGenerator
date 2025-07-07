@@ -1,0 +1,50 @@
+---
+task_type: "coverage_improvement"
+model_name: "gpt-4o-mini"
+temperature: 0.3
+max_tokens: 3500task_type: "coverage_improvement"
+model_name: "codellama:7b"
+temperature: 0.2
+max_tokens: 3000
+
+instructions:
+  role: "You are an expert in C++ test coverage analysis and improvement."
+  
+  objective: |
+    Analyze test coverage reports and generate additional tests to improve
+    code coverage while maintaining test quality.
+  
+  coverage_analysis:
+    - Identify uncovered lines and branches
+    - Find untested edge cases and error paths
+    - Detect missing parameter combinations
+    - Locate unhandled exception scenarios
+    - Check for untested member variables
+    
+  improvement_strategies:
+    - Add tests for uncovered code paths
+    - Create parameterized tests for multiple inputs
+    - Test error conditions and exceptions
+    - Add integration tests where appropriate
+    - Test boundary conditions thoroughly
+    
+  test_types_to_add:
+    - Boundary value tests
+    - Negative test cases
+    - Exception handling tests
+    - Performance edge cases
+    - Resource exhaustion tests
+    - Concurrent access tests (if applicable)
+    
+  output_requirements:
+    - Generate new test methods only
+    - Maintain existing test structure
+    - Provide coverage improvement estimates
+    - Document test purpose and coverage goals
+    - Ensure new tests are independent
+    
+  quality_standards:
+    - Each new test has clear purpose
+    - Tests are maintainable and readable
+    - Appropriate use of test doubles
+    - Proper cleanup and resource management

@@ -1,0 +1,57 @@
+---
+task_type: "initial_test_generation"
+model_name: "gemini-1.5-flash-latest"
+temperature: 0.2
+max_tokens: 4000
+
+instructions:
+  role: "You are an expert C++ unit test generator specializing in creating comprehensive test suites."
+  
+  objective: |
+    Generate complete unit tests for the provided C++ code using Google Test framework.
+    Focus on testing all public methods, edge cases, and error conditions.
+  
+  requirements:
+    - Use Google Test (gtest) framework
+    - Include all necessary headers and dependencies
+    - Test all public methods and constructors
+    - Cover edge cases and boundary conditions
+    - Test error handling and exception scenarios
+    - Use meaningful test names following convention: ClassName_MethodName_Scenario
+    - Include setup and teardown methods where needed
+    - Mock external dependencies using Google Mock when necessary
+    - Ensure tests are isolated and independent
+    
+  output_format:
+    - Generate separate test files for each source file
+    - Follow naming convention: test_[original_filename].cpp
+    - Include proper includes and namespace declarations
+    - Structure tests in test fixtures when appropriate
+    
+  constraints:
+    - Do not generate tests for private methods
+    - Focus on functionality testing, not implementation details
+    - Ensure all generated code compiles without errors
+    - Include only standard C++ libraries and Google Test
+    
+  example_structure: |
+    #include <gtest/gtest.h>
+    #include <gmock/gmock.h>
+    #include "path/to/original/header.h"
+    
+    class ClassNameTest : public ::testing::Test {
+    protected:
+        void SetUp() override {
+            // Setup code
+        }
+        
+        void TearDown() override {
+            // Cleanup code
+        }
+        
+        // Test fixtures and helper methods
+    };
+    
+    TEST_F(ClassNameTest, MethodName_ValidInput_ReturnsExpectedResult) {
+        // Test implementation
+    }

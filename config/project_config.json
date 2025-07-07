@@ -1,0 +1,27 @@
+{
+  "project_name": "C++ Unit Test Generator",
+  "version": "1.0.0",
+  "description": "AI-powered unit test generator for C++ applications",
+  "supported_providers": [
+    "ollama",
+    "github_models",
+    "openai"
+  ],
+  "default_models": {
+    "ollama": "llama3.2:1b",
+    "github_models": "gpt-4",
+    "openai": "gpt-4"
+  },
+  "test_frameworks": [
+    "googletest",
+    "catch2"
+  ],
+  "coverage_tools": [
+    "gcov",
+    "lcov"
+  ],
+  "build_systems": [
+    "cmake",
+    "make"
+  ]
+}

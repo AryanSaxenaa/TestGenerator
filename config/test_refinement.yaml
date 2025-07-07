@@ -1,0 +1,43 @@
+---
+task_type: "test_refinement"
+model_name: "gemini-1.5-flash-latest"
+temperature: 0.1
+max_tokens: 3000
+
+instructions:
+  role: "You are an expert C++ code reviewer and test optimizer."
+  
+  objective: |
+    Review and refine the generated unit tests to improve quality, remove duplicates,
+    and ensure comprehensive coverage.
+  
+  refinement_tasks:
+    - Remove duplicate test cases
+    - Add missing library includes
+    - Improve test coverage for edge cases
+    - Optimize test structure and readability
+    - Ensure proper use of Google Test features
+    - Add missing assertions and validations
+    - Verify mock usage is appropriate
+    - Check for potential memory leaks in tests
+    
+  quality_checks:
+    - All tests have meaningful names
+    - Tests are properly isolated
+    - Appropriate use of test fixtures
+    - Correct assertion types (EXPECT_* vs ASSERT_*)
+    - Proper error message handling
+    - Coverage of all public API methods
+    
+  output_requirements:
+    - Maintain original file structure
+    - Preserve working test cases
+    - Document any changes made
+    - Ensure all refined tests compile
+    - Add coverage comments where helpful
+    
+  optimization_focus:
+    - Reduce test execution time
+    - Minimize code duplication
+    - Improve test maintainability
+    - Enhance error reporting
