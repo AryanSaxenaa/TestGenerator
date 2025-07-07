@@ -1,32 +1,7 @@
 # C++ Unit Test Generator using AI Models
 
-This project implements an AI-powered unit test generator for C++ applications, specifically designed to work with the [orgChartApi](https://github.com/keploy/orgChartApi) project. The tool uses large language models (LLMs) like Ollama, GitHub Models, or OpenAI to automatically generate comprehensive unit tests.
+This project implements an AI-powered unit test generator for C++ applications, specifically designed to work with the [orgChartApi](https://github.com/keploy/orgChartApi) project. The tool uses large language models (LLMs) like Gemini 2.5 Pro to automatically generate comprehensive unit tests.
 
-## 🔒 Security Notice
-
-**⚠️ IMPORTANT: Never commit API keys to version control!**
-
-### API Key Management
-
-This project requires API keys for AI providers. Always protect your keys:
-
-```bash
-# Method 1: Environment Variables (Recommended)
-export GEMINI_API_KEY="your-api-key-here"
-export OPENAI_API_KEY="your-api-key-here"
-export GITHUB_TOKEN="your-github-token-here"
-
-# Method 2: Create .env file (automatically ignored by git)
-echo "GEMINI_API_KEY=your-api-key-here" > .env
-
-# Method 3: Pass as command line parameter
-python src/test_generator.py --api-key "$GEMINI_API_KEY" [other options]
-```
-
-### What's Protected
-- `.env` files are automatically ignored
-- API keys should never appear in source code
-- Use environment variables or secure configuration
 
 ## Architecture
 
@@ -63,29 +38,6 @@ The system follows a multi-stage pipeline architecture:
 - **C++ Compiler** (GCC, Clang, or MSVC)
 - **Google Test Library**
 
-### AI Model Providers (choose one)
-
-#### Option 1: Ollama (Recommended for local development)
-```bash
-# Install Ollama
-curl -fsSL https://ollama.ai/install.sh | sh
-
-# Start Ollama
-ollama serve
-
-# Pull required model
-ollama pull llama3.2:latest
-```
-
-#### Option 2: GitHub Models
-- Sign up for GitHub Models access
-- Obtain an API key
-- Set up billing if required
-
-#### Option 3: OpenAI
-- Create an OpenAI account
-- Obtain an API key
-- Set up billing
 
 ## Installation
 
@@ -128,7 +80,7 @@ ollama pull llama3.2:latest
 
 ### Basic Usage
 
-Generate tests for the orgChartApi project using Ollama:
+Generate tests for the orgChartApi project 
 
 ```bash
 python src/test_generator.py \
@@ -431,5 +383,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [Keploy orgChartApi](https://github.com/keploy/orgChartApi) - Target C++ project
 - [Google Test](https://github.com/google/googletest) - Testing framework
-- [Ollama](https://ollama.ai/) - Local LLM provider
 - [Drogon Framework](https://github.com/drogonframework/drogon) - Web framework used in target project
